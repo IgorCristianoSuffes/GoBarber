@@ -16,6 +16,8 @@ appointmentsRouter.post('/', (request, response) => {
     try {
         const { provider, date } = request.body;
 
+        console.log(provider);
+
         const parsedDate = parseISO(date);
 
         const createAppointment = new CreateAppointmentService(appointmentsRepository);
@@ -23,7 +25,8 @@ appointmentsRouter.post('/', (request, response) => {
         const appointment = createAppointment.execute({ date: parsedDate, provider });
 
         return response.json(appointment);
-    } catch (err) {
+
+    } catch (err: any) {
         return response.status(400).json({ error: err.message });
     }
 });

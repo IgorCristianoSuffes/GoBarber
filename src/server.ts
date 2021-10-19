@@ -1,5 +1,6 @@
 import 'reflect-metadata';
 import express, { Request, Response, NextFunction, json } from 'express';
+import 'express-async-errors';
 import routes from './routes';
 import './database';
 import uploadConfig from './config/upload';

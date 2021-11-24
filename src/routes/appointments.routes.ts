@@ -27,7 +27,8 @@ appointmentsRouter.post('/', async (request, response) => {
 
     const appointment = await createAppointment.execute({
         date: parsedDate,
-        provider_id, });
+        provider_id,
+    });
 
     return response.json(appointment);
 });

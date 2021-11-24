@@ -23,6 +23,7 @@ class UpdateUserAvatarService {
 
         console.log(user);
         console.log(user.avatar);
+        console.log(avatarFilename);
 
         if (user.avatar) {
             // Deletar avatar anterior
